@@ -8,8 +8,9 @@ def carregar_acessos():
     leitor = csv.reader(arquivo)
     next(leitor)
 
-    for acessou_home, acessou_como_funciona, acessou_contato, comprou in leitor:
-        x.append([int(acessou_home), int(acessou_como_funciona), int(acessou_contato)])
+    for home, como_funciona, contato, comprou in leitor:
+        dado = [int(home), int(como_funciona), int(contato)]
+        x.append(dado)
         y.append(int(comprou))
 
     return x, y
