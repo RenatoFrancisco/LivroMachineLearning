@@ -9,10 +9,10 @@ ydummies_df = y_df
 x = xdummies_df.values
 y = ydummies_df.values
 
-acerto_de_um = sum(y)
-acerto_de_zero = len(y) - acerto_de_um
+acerto_de_um = len(y[y==1])
+acerto_de_zero = len(y[y==0])
 taxa_de_acerto_base = 100.0 * max(acerto_de_um, acerto_de_zero) / len(y)
-print('Taxa de acerto base: %f' % taxa_de_acerto_base)
+print('Taxa de acerto base: %.2f' % taxa_de_acerto_base)
 
 porcetagem_treino = 0.9
 
@@ -36,5 +36,5 @@ total_de_acertos = len(acertos)
 total_de_elementos = len(teste_dados)
 taxa_de_acerto = 100.0 * total_de_acertos / total_de_elementos
 
-print(taxa_de_acerto)
+print('Taxa de acerto do algoritmo: %.2f' % taxa_de_acerto)
 print(total_de_elementos)
