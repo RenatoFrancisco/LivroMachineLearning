@@ -38,3 +38,7 @@ taxa_de_acerto = 100.0 * total_de_acertos / total_de_elementos
 
 print('Taxa de acerto do algoritmo: %.2f' % taxa_de_acerto)
 print(total_de_elementos)
+
+acerto_base = max(Counter(teste_marcacoes).values())
+taxa_de_acerto_base = 100.0 * acerto_base / len(teste_marcacoes)
+print('Taxa de acerto base: %f' % taxa_de_acerto_base)
