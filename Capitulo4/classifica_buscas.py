@@ -1,4 +1,5 @@
 import pandas as pd
+from collections import Counter
 
 df = pd.read_csv('buscas2.csv')
 x_df = df[['home', 'busca', 'logado']]
@@ -9,9 +10,8 @@ ydummies_df = y_df
 x = xdummies_df.values
 y = ydummies_df.values
 
-acerto_de_um = len(y[y=='sim'])
-acerto_de_zero = len(y[y=='nao'])
-taxa_de_acerto_base = 100.0 * max(acerto_de_um, acerto_de_zero) / len(y)
+acerto_base = max(Counter(y).values())
+taxa_de_acerto_base = 100.0 * acerto_base / len(y)
 print('Taxa de acerto base: %.2f' % taxa_de_acerto_base)
 
 porcetagem_treino = 0.9
